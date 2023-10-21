@@ -23,6 +23,7 @@ export default function Form() {
       onSubmit={(e) => {
         e.preventDefault();
         createPerson.mutate({ name, age, id });
+        console.log(name);
       }}
       className="flex flex-col gap-2"
     >
@@ -49,7 +50,7 @@ export default function Form() {
       />
       <button
         type="submit"
-        className="rounded-full bg-white/10 px-10 py-3 font-semibold transition hover:bg-white/20"
+        className="rounded-full bg-slate-400 px-10 py-3 font-semibold transition hover:bg-white/20"
         disabled={createPerson.isLoading}
       >
         {createPerson.isLoading ? "Submitting..." : "Submit"}
